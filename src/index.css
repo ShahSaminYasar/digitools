@@ -1,4 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: winter --default;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 8px 16px;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #4f39f6, #9514fa);
+  color: #ffffff;
+}
+
+nav ul li a:hover {
+  color: var(--color-primary);
 }
