@@ -22,6 +22,24 @@ section {
   margin: 0 auto;
 }
 
+.section-title {
+  font-size: 48px;
+  color: var(--color-neutral);
+  font-weight: 800;
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.section-description {
+  display: block;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto 20px;
+  color: var(--color-base-content);
+}
+
 .bg-gradient {
   background: linear-gradient(to right, #4f39f6, #9514fa);
 }
@@ -30,7 +48,6 @@ section {
   border-radius: 50px;
   padding: 8px 16px;
   border-width: 2px;
-  transition: all 0.3s;
 }
 
 .btn-primary {
@@ -107,4 +124,19 @@ nav ul li a:hover {
 .divider::before,
 .divider::after {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.fade {
+  opacity: 0;
+  animation: fade-animation 0.2s linear forwards;
+}
+@keyframes fade-animation {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }

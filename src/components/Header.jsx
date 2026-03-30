@@ -1,7 +1,7 @@
 import { ShoppingCartIcon } from "@phosphor-icons/react";
 import logo from "../assets/logo.png";
 
-export default function Header() {
+export default function Header({ cart = [] }) {
   return (
     <header className="px-3 font-semibold text-sm">
       <div className="container flex items-center justify-between gap-3 h-20">
@@ -28,8 +28,13 @@ export default function Header() {
         </nav>
 
         <div className="flex gap-4 items-center">
-          <button>
-            <ShoppingCartIcon />
+          <button className="relative">
+            <ShoppingCartIcon size={18} />
+            {cart?.length > 0 && (
+              <span className="absolute -top-2 -right-1 text-red-600 font-bold text-xs">
+                {cart?.length}
+              </span>
+            )}
           </button>
 
           <a href="#">Login</a>
