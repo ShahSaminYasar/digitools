@@ -8,7 +8,7 @@ const Products = ({ productsPromise, addToCart, cart }) => {
       {products.map((p, pi) => (
         <div
           key={p?.id}
-          className="flex flex-col gap-3 p-5 border border-base-300 rounded-xl fade"
+          className="flex flex-col gap-3 p-5 border border-base-300 rounded-xl fade relative"
           style={{ animationDelay: pi * 80 + "ms" }}
         >
           <span

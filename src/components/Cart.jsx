@@ -3,9 +3,9 @@ import { use } from "react";
 const Cart = ({ cart = [], removeFromCart, productsPromise, checkout }) => {
   const products = use(productsPromise);
   // const cartedProducts = products?.filter((p) => cart?.includes(p?.id));
-  const cartedProducts = cart?.map((item) =>
-    products?.find((p) => p?.id === item),
-  );
+  const cartedProducts = cart
+    ?.map((item) => products?.find((p) => p?.id === item))
+    ?.filter(Boolean);
   const cartTotal = cartedProducts?.reduce(
     (total, product) => total + product?.price,
     0,

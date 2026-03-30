@@ -8,7 +8,7 @@ const steps = [
   {
     image: "/assets/package.png",
     title: "Choose Products",
-    description: "Browse our catalog and select the toolsthat fit your needs.",
+    description: "Browse our catalog and select the tools that fit your needs.",
   },
   {
     image: "/assets/rocket.png",
@@ -28,7 +28,10 @@ const Steps = () => {
 
         <div className="flex flex-row flex-wrap justify-center items-center gap-7 mt-9">
           {steps?.map((step, index) => (
-            <div className="w-full max-w-sm mx-auto bg-base-100 p-4 rounded-xl border border-base-300 flex flex-col gap-3 items-center justify-center aspect-square relative text-center">
+            <div
+              key={index}
+              className="w-full max-w-sm mx-auto bg-base-100 p-4 rounded-xl border border-base-300 flex flex-col gap-3 items-center justify-center aspect-square relative text-center"
+            >
               <span className="grid w-9 aspect-square place-content-center p-2 absolute top-5 right-5 bg-gradient text-white rounded-full text-sm font-medium">
                 {`${index + 1}`.padStart(2, "0")}
               </span>

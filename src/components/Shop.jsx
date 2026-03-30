@@ -13,7 +13,7 @@ const Shop = ({ cart = [], addToCart, removeFromCart, checkout }) => {
         <h2 className="section-title">Premium digital tools</h2>
         <p className="section-description">
           Choose from our curated collection of premium digital products
-          designedto boost your productivity and creativity.
+          designed to boost your productivity and creativity.
         </p>
 
         <div className=" flex justify-center gap-1 mb-8 mt-6">
