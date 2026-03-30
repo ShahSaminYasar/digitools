@@ -11,6 +11,11 @@ const Products = ({ productsPromise, addToCart, cart }) => {
           className="flex flex-col gap-3 p-5 border border-base-300 rounded-xl fade"
           style={{ animationDelay: pi * 80 + "ms" }}
         >
+          <span
+            className={`capitalize py-1.5 px-3 text-sm font-semibold w-fit block rounded-full absolute top-3 right-3 ${p?.tag === "best seller" ? "text-amber-500 bg-amber-100" : p?.tag === "new" ? "text-green-500 bg-green-100" : "text-indigo-500 bg-indigo-100"}`}
+          >
+            {p?.tag}
+          </span>
           <div className="aspect-square border border-base-300 rounded-full p-3 w-15 bg-base-100 grid place-content-center">
             <img src={p?.icon} className="w-full" />
           </div>

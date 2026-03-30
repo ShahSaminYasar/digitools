@@ -42,8 +42,8 @@
     "description": "Launch your online store with essential tools and integrations.",
     "price": 59,
     "period": "Mo",
-    "tag": "popular",
-    "tagType": "popular",
+    "tag": "best seller",
+    "tagType": "best seller",
     "features": [
       "Payment gateway integration",
       "Inventory management",
@@ -57,8 +57,8 @@
     "description": "Manage and grow your social media presence from one dashboard.",
     "price": 15,
     "period": "Mo",
-    "tag": "best seller",
-    "tagType": "best seller",
+    "tag": "new",
+    "tagType": "new",
     "features": [
       "Post scheduling",
       "Analytics dashboard",
@@ -72,8 +72,8 @@
     "description": "Generate high-quality content quickly using AI-powered writing tools.",
     "price": 99,
     "period": "Yr",
-    "tag": "new",
-    "tagType": "new",
+    "tag": "popular",
+    "tagType": "popular",
     "features": [
       "Grammar correction",
       "Content generation",
