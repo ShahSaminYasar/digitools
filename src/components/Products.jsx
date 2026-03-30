@@ -1,4 +1,8 @@
-const Products = ({ products = [] }) => {
+import { use } from "react";
+
+const Products = ({ productsPromise, addToCart, cart }) => {
+  const products = use(productsPromise);
+
   return (
     <div className="w-full grid grid-cols-3 gap-5">
       {products.map((p, pi) => (
@@ -7,10 +11,9 @@ const Products = ({ products = [] }) => {
           className="flex flex-col gap-3 p-5 border border-base-300 rounded-xl fade"
           style={{ animationDelay: pi * 80 + "ms" }}
         >
-          <img
-            src={p?.icon}
-            className="aspect-square border border-base-300 rounded-full p-3 w-15"
-          />
+          <div className="aspect-square border border-base-300 rounded-full p-3 w-15 bg-base-100 grid place-content-center">
+            <img src={p?.icon} className="w-full" />
+          </div>
           <h3 className="text-2xl font-semibold text-neutral">{p?.name}</h3>
           <p>{p?.description}</p>
           <span className="text-2xl font-semibold text-neutral">
@@ -24,7 +27,12 @@ const Products = ({ products = [] }) => {
               </span>
             ))}
           </div>
-          <button className="btn btn-primary mt-1">Buy Now</button>
+          <button
+            className="btn btn-primary mt-1"
+            onClick={() => addToCart(p?.id)}
+          >
+            {cart?.includes(p?.id) ? "Added to Cart" : "Buy Now"}
+          </button>
         </div>
       ))}
     </div>

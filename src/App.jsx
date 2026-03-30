@@ -6,7 +6,25 @@ import Shop from "./components/Shop";
 import { useState } from "react";
 
 export default function App() {
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useState([]);
+
+  // Functions
+  const addToCart = (id) => {
+    if (cart?.includes(id)) {
+      return alert("Already added");
+    }
+    setCart((prev) => [...prev, id]);
+  };
+
+  const removeFromCart = (id) => {
+    setCart((prev) => prev.filter((item) => item !== id));
+    return alert("Removed from cart");
+  };
+
+  const checkout = () => {
+    setCart([]);
+    return alert("Checked out!");
+  };
 
   return (
     <>
@@ -14,7 +32,12 @@ export default function App() {
       <main>
         <Hero />
         <Stats />
-        <Shop cart={cart} setCart={setCart} />
+        <Shop
+          cart={cart}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+          checkout={checkout}
+        />
       </main>
       <Footer />
     </>

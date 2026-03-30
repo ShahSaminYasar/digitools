@@ -1,99 +1,10 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Products from "./Products";
 import Cart from "./Cart";
 
-const products = [
-  {
-    id: 1,
-    name: "Design Tool Pro",
-    description:
-      "A powerful design platform for creating stunning graphics and UI layouts.",
-    price: 19,
-    period: "Mo",
-    tag: "popular",
-    tagType: "popular",
-    features: ["100+ templates", "Drag & drop editor", "Export to PNG & PDF"],
-    icon: "/assets/products/design-tool.png",
-  },
-  {
-    id: 2,
-    name: "Operations Manager",
-    description:
-      "Streamline your business operations with automation and analytics.",
-    price: 49,
-    period: "Mo",
-    tag: "best seller",
-    tagType: "best seller",
-    features: [
-      "Workflow automation",
-      "Real-time analytics",
-      "Team collaboration",
-    ],
-    icon: "/assets/products/operation.png",
-  },
-  {
-    id: 3,
-    name: "Portfolio Builder",
-    description:
-      "Create professional portfolios to showcase your work effortlessly.",
-    price: 29,
-    period: "One-Time",
-    tag: "new",
-    tagType: "new",
-    features: ["Custom domains", "Responsive design", "SEO optimization"],
-    icon: "/assets/products/portfolio.png",
-  },
-  {
-    id: 4,
-    name: "E-Commerce Starter",
-    description:
-      "Launch your online store with essential tools and integrations.",
-    price: 59,
-    period: "Mo",
-    tag: "popular",
-    tagType: "popular",
-    features: [
-      "Payment gateway integration",
-      "Inventory management",
-      "Order tracking",
-    ],
-    icon: "/assets/products/shopping-cart.png",
-  },
-  {
-    id: 5,
-    name: "Social Media Suite",
-    description:
-      "Manage and grow your social media presence from one dashboard.",
-    price: 15,
-    period: "Mo",
-    tag: "best seller",
-    tagType: "best seller",
-    features: [
-      "Post scheduling",
-      "Analytics dashboard",
-      "Multi-platform support",
-    ],
-    icon: "/assets/products/social-media.png",
-  },
-  {
-    id: 6,
-    name: "AI Writing Assistant",
-    description:
-      "Generate high-quality content quickly using AI-powered writing tools.",
-    price: 99,
-    period: "Yr",
-    tag: "new",
-    tagType: "new",
-    features: [
-      "Grammar correction",
-      "Content generation",
-      "Multiple writing tones",
-    ],
-    icon: "/assets/products/writing_2327400 1.png",
-  },
-];
+const productsPromise = fetch("/data/tools.json").then((res) => res.json());
 
-const Shop = ({ cart = [], setCart }) => {
+const Shop = ({ cart = [], addToCart, removeFromCart, checkout }) => {
   const [tab, setTab] = useState("products");
 
   return (
@@ -120,7 +31,36 @@ const Shop = ({ cart = [], setCart }) => {
           </button>
         </div>
 
-        {tab === "products" ? <Products products={products} /> : <Cart />}
+        {tab === "products" ? (
+          <Suspense
+            fallback={
+              <div className="w-full py-10 flex items-center justify-center">
+                <span className="loading loading-ring loading-lg"></span>
+              </div>
+            }
+          >
+            <Products
+              productsPromise={productsPromise}
+              cart={cart}
+              addToCart={addToCart}
+            />
+          </Suspense>
+        ) : (
+          <Suspense
+            fallback={
+              <div className="w-full py-10 flex items-center justify-center">
+                <span className="loading loading-ring loading-lg"></span>
+              </div>
+            }
+          >
+            <Cart
+              productsPromise={productsPromise}
+              removeFromCart={removeFromCart}
+              cart={cart}
+              checkout={checkout}
+            />
+          </Suspense>
+        )}
       </div>
     </section>
   );
