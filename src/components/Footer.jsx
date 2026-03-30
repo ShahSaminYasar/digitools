@@ -103,7 +103,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="pt-5 text-xs tracking-wide flex items-center justify-between font-light text-neutral-content/70">
+      <div className="container pt-5 text-xs tracking-wide flex flex-col gap-1 sm:flex-row items-center justify-between font-light text-neutral-content/70">
         <p>&copy; 2026 Digitools. All rights reserved.</p>
 
         <div className="flex gap-2 md:gap-5">

@@ -23,7 +23,7 @@ export default function Header({ cart = [] }) {
             <img
               src={"/assets/logo.png"}
               alt="DigiTools"
-              className="w-full max-w-38"
+              className="w-full max-w-30 sm:max-w-38"
             />
           </div>
 
@@ -69,9 +69,9 @@ export default function Header({ cart = [] }) {
               )}
             </button>
 
-            <a href="#">Login</a>
+            <a href="#features">Login</a>
 
-            <a href="#" className="btn btn-primary">
+            <a href="#products" className="btn btn-primary">
               Get Started
             </a>
           </div>

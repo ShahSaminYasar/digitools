@@ -149,3 +149,9 @@ nav ul li a:hover {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .section-title {
+    font-size: 35px;
+  }
+}
