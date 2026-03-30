@@ -22,7 +22,7 @@ section {
   margin: 0 auto;
 }
 
-.gradient-bg {
+.bg-gradient {
   background: linear-gradient(to right, #4f39f6, #9514fa);
 }
 
@@ -102,4 +102,9 @@ nav ul li a:hover {
   width: 6px;
   height: 6px;
   border-radius: 100%;
+}
+
+.divider::before,
+.divider::after {
+  background-color: rgba(255, 255, 255, 0.3);
 }
