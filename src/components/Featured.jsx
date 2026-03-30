@@ -20,15 +20,21 @@ const Featured = () => {
         </p>
 
         <div className="flex items-center gap-3 justify-center mt-3">
-          <button className="btn hover:scale-105 transition-all duration-150 hover:opacity-100">
+          <a
+            href="#products"
+            className="btn hover:scale-105 transition-all duration-150 hover:opacity-100"
+          >
             <span className="bg-linear-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
               Explore Products
             </span>
-          </button>
+          </a>
 
-          <button className="btn border-white bg-transparent hover:scale-105 transition-all duration-150 text-white">
+          <a
+            href="#pricing"
+            className="btn border-white bg-transparent hover:scale-105 transition-all duration-150 text-white"
+          >
             View Pricing
-          </button>
+          </a>
         </div>
 
         <p
