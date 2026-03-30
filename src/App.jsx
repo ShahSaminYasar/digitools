@@ -5,6 +5,7 @@ import Stats from "./components/Stats";
 import Shop from "./components/Shop";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import Steps from "./components/Steps";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -40,6 +41,7 @@ export default function App() {
           removeFromCart={removeFromCart}
           checkout={checkout}
         />
+        <Steps />
       </main>
       <Footer />
     </>

@@ -1,11 +1,14 @@
 import { ShoppingCartIcon } from "@phosphor-icons/react";
-import logo from "../assets/logo.png";
 
 export default function Header({ cart = [] }) {
   return (
     <header className="px-3 font-semibold text-sm">
       <div className="container flex items-center justify-between gap-3 h-20">
-        <img src={logo} alt="DigiTools" className="w-full max-w-38" />
+        <img
+          src={"/assets/logo.png"}
+          alt="DigiTools"
+          className="w-full max-w-38"
+        />
 
         <nav>
           <ul className="flex gap-8">

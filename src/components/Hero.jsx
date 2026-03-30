@@ -1,5 +1,4 @@
 import { PlayIcon } from "@phosphor-icons/react";
-import heroImage from "../assets/banner.png";
 
 const Hero = () => {
   return (
@@ -29,7 +28,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <img src={heroImage} alt="" />
+        <img src={"/assets/banner.png"} alt="Hero banner" />
       </div>
     </section>
   );
