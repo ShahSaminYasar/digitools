@@ -6,8 +6,8 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral text-neutral-content px-3 pb-5 pt-10">
-      <div className="container grid grid-cols-2 lg:grid-cols-6 gap-10 pb-10 border-b border-neutral-content/20">
+    <footer className="bg-neutral text-neutral-content px-3 pb-5 pt-18">
+      <div className="container grid grid-cols-2 lg:grid-cols-6 gap-10 pb-16 border-b border-neutral-content/20">
         <div className="col-span-2 flex flex-col gap-4">
           <h1 className="text-3xl font-semibold">DigiTools</h1>
           <p>
