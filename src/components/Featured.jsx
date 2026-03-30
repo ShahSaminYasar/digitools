@@ -1,6 +1,6 @@
 const Featured = () => {
   return (
-    <section className="bg-gradient text-white">
+    <section id="featured" className="bg-gradient text-white">
       <div className="container flex flex-col justify-center items-center gap-6">
         <h2
           className="section-title"
