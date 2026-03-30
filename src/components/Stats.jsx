@@ -1,7 +1,7 @@
 const Stats = () => {
   return (
     <section className="bg-gradient text-white">
-      <div className="container font-light flex flex-col sm:flex-row justify-evenly items-center">
+      <div className="container font-light flex flex-col sm:flex-row justify-evenly items-center text-center">
         <div>
           <span className="text-6xl font-bold block mb-2">50K+</span>
           <span className="text-white/90">Active Users</span>

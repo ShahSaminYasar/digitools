@@ -8,7 +8,7 @@ const Shop = ({ cart = [], addToCart, removeFromCart, checkout }) => {
   const [tab, setTab] = useState("products");
 
   return (
-    <section>
+    <section id="products">
       <div className="container">
         <h2 className="section-title">Premium digital tools</h2>
         <p className="section-description">

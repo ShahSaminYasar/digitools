@@ -2,17 +2,20 @@ import { use } from "react";
 
 const Cart = ({ cart = [], removeFromCart, productsPromise, checkout }) => {
   const products = use(productsPromise);
-  const cartedProducts = products?.filter((p) => cart?.includes(p?.id));
+  // const cartedProducts = products?.filter((p) => cart?.includes(p?.id));
+  const cartedProducts = cart?.map((item) =>
+    products?.find((p) => p?.id === item),
+  );
   const cartTotal = cartedProducts?.reduce(
     (total, product) => total + product?.price,
     0,
   );
 
   return (
-    <div className="border border-base-300 rounded-xl p-8 flex flex-col gap-5 fade">
+    <div className="border border-base-300 rounded-xl p-8 flex flex-col gap-5">
       <h3 className="text-2xl text-neutral font-bold">Your Cart</h3>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 fade">
         {cartedProducts?.length > 0 ? (
           cartedProducts?.map((p) => (
             <div

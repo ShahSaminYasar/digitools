@@ -7,6 +7,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import Steps from "./components/Steps";
 import Pricing from "./components/Pricing";
+import Featured from "./components/Featured";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -44,6 +45,7 @@ export default function App() {
         />
         <Steps />
         <Pricing />
+        <Featured />
       </main>
       <Footer />
     </>

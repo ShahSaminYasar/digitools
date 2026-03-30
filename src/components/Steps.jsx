@@ -19,7 +19,7 @@ const steps = [
 
 const Steps = () => {
   return (
-    <section className="bg-base-200">
+    <section id="features" className="bg-base-200">
       <div className="container">
         <h2 className="section-title">Get started in 3 steps</h2>
         <p className="section-description">

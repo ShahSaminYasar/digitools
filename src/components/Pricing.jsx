@@ -58,7 +58,7 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <section>
+    <section id="pricing">
       <div className="container">
         <h2 className="section-title">Simple, Transparent Pricing</h2>
         <p className="section-description">

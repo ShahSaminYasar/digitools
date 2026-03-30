@@ -5,6 +5,11 @@
   themes: winter --default;
 }
 
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
 body {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
