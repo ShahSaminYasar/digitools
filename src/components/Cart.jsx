@@ -3,6 +3,10 @@ import { use } from "react";
 const Cart = ({ cart = [], removeFromCart, productsPromise, checkout }) => {
   const products = use(productsPromise);
   const cartedProducts = products?.filter((p) => cart?.includes(p?.id));
+  const cartTotal = cartedProducts?.reduce(
+    (total, product) => total + product?.price,
+    0,
+  );
 
   return (
     <div className="border border-base-300 rounded-xl p-8 flex flex-col gap-5 fade">
@@ -43,19 +47,13 @@ const Cart = ({ cart = [], removeFromCart, productsPromise, checkout }) => {
 
       <div className="flex justify-between items-center gap-5">
         <span className="text-secondary font-normal">Total</span>
-        <span className="text-xl font-medium text-neutral">
-          $
-          {cartedProducts?.reduce(
-            (total, product) => total + product?.price,
-            0,
-          )}
-        </span>
+        <span className="text-xl font-medium text-neutral">${cartTotal}</span>
       </div>
 
       <button
         className={`btn btn-primary disabled:grayscale disabled:opacity-50`}
         disabled={cartedProducts?.length === 0}
-        onClick={checkout}
+        onClick={() => checkout(cartTotal)}
       >
         Proceed To Checkout
       </button>

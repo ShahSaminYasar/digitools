@@ -16,7 +16,7 @@ const Shop = ({ cart = [], addToCart, removeFromCart, checkout }) => {
           designedto boost your productivity and creativity.
         </p>
 
-        <div className=" flex justify-center gap-1 mb-8">
+        <div className=" flex justify-center gap-1 mb-8 mt-6">
           <button
             onClick={() => setTab("products")}
             className={`btn ${tab === "products" ? "btn-primary" : "btn-default"}`}

@@ -16,6 +16,10 @@ section {
   padding: 80px 12px;
 }
 
+.Toastify {
+  padding: 0px 0px;
+}
+
 .container {
   width: 100%;
   max-width: 1366px;

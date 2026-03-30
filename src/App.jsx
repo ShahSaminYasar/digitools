@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Stats from "./components/Stats";
 import Shop from "./components/Shop";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -11,19 +12,20 @@ export default function App() {
   // Functions
   const addToCart = (id) => {
     if (cart?.includes(id)) {
-      return alert("Already added");
+      return toast.warning("Already added to cart");
     }
     setCart((prev) => [...prev, id]);
+    toast.success("Added to cart!");
   };
 
   const removeFromCart = (id) => {
     setCart((prev) => prev.filter((item) => item !== id));
-    return alert("Removed from cart");
+    return toast.info("Removed from cart");
   };
 
-  const checkout = () => {
+  const checkout = (amount = 0) => {
     setCart([]);
-    return alert("Checked out!");
+    return toast.success("Checkout successful, total paid $" + amount);
   };
 
   return (
